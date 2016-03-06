@@ -33,7 +33,7 @@ class TemporaryDirectory(object):
     """
 
     def __init__(self, suffix=None, prefix=None, dir=None):
-        self.name = mkdtemp(suffix, prefix, dir)
+        self.name = mkdtemp(suffix or '', prefix or '', dir or '')
         self._finalizer = _weakref.finalize(
             self, self._cleanup, self.name,
             warn_message="Implicitly cleaning up {!r}".format(self))
