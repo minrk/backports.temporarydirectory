@@ -4,22 +4,22 @@ import sys
 from distutils.core import setup
 
 long_description = """
-Use Python 3 shutil.which on Python 2::
+Use Python 3 tempfile.TemporaryDirectory on Python 2::
 
     try:
-        from shutil import which
+        from tempfile import TemporaryDirectory
     except ImportError:
-        from backports.shutil_which import which
+        from backports.temporarydirectory import TemporaryDirectory
 """
 
 setup_args = dict(
-    name='backports.shutil_which',
+    name='backports.temporarydirectory',
     version='3.5.1',
     author="Min RK",
     author_email="benjaminrk@gmail.com",
-    description="Backport of shutil.which from Python 3.3",
+    description="Backport of tempfile.TemporaryDirectory from Python 3.2",
     long_description=long_description,
-    url="https://github.com/minrk/backports.shutil_which",
+    url="https://github.com/minrk/backports.temporarydirectory",
     packages=['backports'],
     license="Python Software Foundation License",
     cmdclass={},
